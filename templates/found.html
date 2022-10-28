@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CBMRS</title>
+  <link rel="icon" type="image/png" href="/Images/1.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins:300,500&amp;display=swap'>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<style>
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 100%;
+  background-color: #ffffff;
+  line-height: 1.5;
+  color: #000;
+}
+@media (min-width: 32rem) {
+  body {
+    font-size: 102.5%;
+  }
+}
+@media (min-width: 54rem) {
+  body {
+    font-size: 105%;
+  }
+}
+@media (min-width: 65rem) {
+  body {
+    font-size: 107.5%;
+  }
+}
+@media (min-width: 75em) {
+  body {
+    font-size: 110%;
+  }
+}
+@media (min-width: 91rem) {
+  body {
+    font-size: 115%;
+  }
+}
+@media (min-width: 115rem) {
+  body {
+    font-size: 120%;
+  }
+}
+@media (min-width: 130rem) {
+  body {
+    font-size: 125%;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+figure {
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+}
+    
+.movie{
+    margin-right: 5vh;
+    margin-left: 5vh;
+    display: block;
+    background-color: white;
+    text-align: center;
+}
+button{
+  margin-left: 10vh;
+  margin-top: 3vh;
+}
+@media screen and (max-width:600px) {
+    .movie{
+        padding-top: 12vh;
+    }
+}
+    table,tr,td,th{
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    td{
+      padding: 10px;  
+    }
+
+</style>
+</head>
+<body>
+    <button onClick={window.history.back()}>Back to Home Page</button>
+    <div class="movie">
+        <h2><u>Movie Recommendations for "{{ search_name }}"</u></h2>
+        <table class="movie_table" align="center">
+            <tr>
+                <th>Movie Title</th>
+                <th>Release Date</th>
+                <th>Similarity Score</th>
+            </tr>
+            <tbody class="table_body">
+                <tr>
+                    <td><a href={{ movie_homepage[0] }} target="_blank">{{ movie_names[0] }}</a></td>
+                    <td>{{ movie_releaseDate[0] }}</td>
+                    <td>{{ movie_simScore[0][1] }}</td>
+                </tr>
+                <tr>
+                    <td><a href={{ movie_homepage[1] }} target="_blank">{{ movie_names[1] }}</a></td>
+                    <td>{{ movie_releaseDate[1] }}</td>
+                    <td>{{ movie_simScore[1][1] }}</td>
+                </tr>
+                <tr>
+                    <td><a href={{ movie_homepage[2] }} target="_blank">{{ movie_names[2] }}</a></td>
+                    <td>{{ movie_releaseDate[2] }}</td>
+                    <td>{{ movie_simScore[2][1] }}</td>
+                </tr>
+                <tr>
+                    <td><a href={{ movie_homepage[3] }} target="_blank">{{ movie_names[3] }}</a></td>
+                    <td>{{ movie_releaseDate[3] }}</td>
+                    <td>{{ movie_simScore[3][1] }}</td>
+                </tr>
+                <tr>
+                    <td><a href={{ movie_homepage[4] }} target="_blank">{{ movie_names[4] }}</a></td>
+                    <td>{{ movie_releaseDate[4] }}</td>
+                    <td>{{ movie_simScore[4][1] }}</td>
+                </tr>
+                <tr>
+                    <td><a href={{ movie_homepage[5] }} target="_blank">{{ movie_names[5] }}</a></td>
+                    <td>{{ movie_releaseDate[5] }}</td>
+                    <td>{{ movie_simScore[5][1] }}</td>
+                </tr>
+                <tr>
+                    <td><a href={{ movie_homepage[6] }} target="_blank">{{ movie_names[6] }}</a></td>
+                    <td>{{ movie_releaseDate[6] }}</td>
+                    <td>{{ movie_simScore[6][1] }}</td>
+                </tr>
+                <tr>
+                    <td><a href={{ movie_homepage[7] }} target="_blank">{{ movie_names[7] }}</a></td>
+                    <td>{{ movie_releaseDate[7] }}</td>
+                    <td>{{ movie_simScore[7][1] }}</td>
+                </tr>
+                <tr>
+                    <td><a href={{ movie_homepage[8] }} target="_blank">{{ movie_names[8] }}</a></td>
+                    <td>{{ movie_releaseDate[8] }}</td>
+                    <td>{{ movie_simScore[8][1] }}</td>
+                </tr>
+                <tr>
+                    <td><a href={{ movie_homepage[9] }} target="_blank">{{ movie_names[9] }}</a></td>
+                    <td>{{ movie_releaseDate[9] }}</td>
+                    <td>{{ movie_simScore[9][1] }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  </div>
+<!-- partial -->
+  <script src='https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js'></script>    
+  
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CBMRS</title>
+  <link rel="icon" type="image/png" href="/Images/1.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins:300,500&amp;display=swap'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+:root{
+  background-color: white;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin-top: 15vh;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 100%;
+  background-color: white;
+  line-height: 1.5;
+  color: #000;
+}
+@media (min-width: 32rem) {
+  body {
+    font-size: 102.5%;
+  }
+    .movie{
+    margin-right: 25vh;
+    margin-left: 25vh;
+  }
+}
+@media (min-width: 54rem) {
+  body {
+    font-size: 105%;
+  }
+}
+@media (min-width: 65rem) {
+  body {
+    font-size: 107.5%;
+  }
+}
+@media (min-width: 75em) {
+  body {
+    font-size: 110%;
+  }
+}
+@media (min-width: 91rem) {
+  body {
+    font-size: 115%;
+  }
+}
+@media (min-width: 115rem) {
+  body {
+    font-size: 120%;
+  }
+}
+@media (min-width: 130rem) {
+  body {
+    font-size: 125%;
+  }
+}
+a {
+  text-decoration: none;
+}
+
+.movie{
+    display: block;
+    text-align: center;
+}
+#movie_name{
+    width: 70%;
+    padding: 1em;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid grey;
+}
+#submission_button{
+    width: 25%;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 5px;
+    color: white;
+    background-color:rgb(25, 139, 253);
+    border-style: none;
+}
+@media screen and (max-width:600px) {
+    .movie{
+        padding-top: 11vh;
+        padding-bottom: 11vh;
+    }
+}
+h2{
+  text-align: center;
+}
+.creds{
+  margin-left: 26vh;
+  margin-top: 1vh;
+}
+
+
+
+
+
+
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: #171c24;
+    margin-top: 35.6vh;
+}
+footer .top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+    margin: 50px 0;
+}
+.top .top-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+.top-left img{
+    width: 70px;
+    margin-right: 30px;
+}
+.top-left .details{
+    display: flex;
+    flex-direction: column;
+}
+.details h3{
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.details p{
+    font-size: 15px;
+    color: #aaa;
+}
+.top .top-right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.top-right h3{
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.top-right .links{
+    display: flex;
+}
+.links a{
+    width: 35px;
+    height: 35px;
+    margin: 0 5px;
+    border-radius: 5px;
+    background-color: rgba(155,155,155,0.1);
+    color: #ddd;
+    text-align: center;
+    line-height: 35px;
+    transition: all 0.3s ease;
+}
+.links a:hover{
+    background-color: rgba(134, 133, 133, 0.253);
+}
+footer .bottom{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #12161d;
+    padding: 20px 0;
+}
+.bottom span{
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+}
+
+.bottom span a{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+
+
+
+</style>
+</head>
+<body>
+
+    <h2><u>Content Based Movie Recommendation System</u></h2>
+    <div class="movie">
+        <form action="{{ url_for('main') }}" method="POST">
+            <input type="text" id="movie_name" name="movie_name" placeholder="Enter a full movie name" autocorrect="off" autocapitalize="off" required />
+            <input type="submit" id="submission_button" value="Submit"/>
+        </form>
+  </div>
+  <script src='https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js'></script>
+
+
+
+<footer>
+  <div class="top">
+      <div class="top-left">
+          <a href="https://g.dev/cs949" target="_blank"><img src="/Images/mypic.png"></a>
+          <div class="details">
+              <h3>Content Based Movie Recommendation System</h3>
+              <p>By Chaitanya Sharma</p>
+          </div>
+      </div>
+      <div class="top-right">
+          <h3>Follow Me</h3>
+          <div class="links">
+              <a href="mailto:chaitanyas949@gmail.com" target="_blank"> <i class="fa fa-envelope" aria-hidden="true" style="color:#dfa214;"></i> </a>
+              <a href="https://www.instagram.com/chaitanyas949/" target="_blank"> <i class="fab fa-instagram" style="color:#BC2A8D;"> </i> </a>
+              <a href="https://twitter.com/chaitanyas949" target="_blank"> <i class="fab fa-twitter" style="color: #00b0f6;"> </i> </a>
+              <a href="https://www.linkedin.com/in/cs949/" target="_blank"> <i class="fab fa-linkedin" style="color:#ffffff;"> </i> </a>
+          </div> <br>
+      </div>
+  </div>
+  <div class="bottom">
+      <span>&copy; 2022 <a href="index.html">CBMRS</a> - Made with  <a href="https://github.com/CS949/" target="_blank"> <i class="fa fa-heart"></i> Chaitanya Sharma </a></span>
+  </div>
+</footer>
+
+
+
+</body>
+</html>
